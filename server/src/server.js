@@ -5,6 +5,7 @@ import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
 import prisma from './db.js';
+import { sendMembershipNotification, sendContactNotification } from './mailer.js';
 
 dotenv.config();
 
@@ -247,6 +248,12 @@ app.post('/api/memberships', async (req, res) => {
         message: cleanMessage,
       },
     });
+
+    // Asynchronously notify info@telangananeuro.com
+    sendMembershipNotification(created).catch((err) =>
+      console.error('[Mailer] Membership dispatch error:', err)
+    );
+
     return res.status(201).json(created);
   } catch (err) {
     console.error('Membership submission error:', err);
@@ -288,6 +295,16 @@ app.post('/api/contact', async (req, res) => {
         message: cleanMessage,
       },
     });
+
+    // Asynchronously notify info@telangananeuro.com
+    sendContactNotification({
+      name: cleanName,
+      email: cleanEmail,
+      phone: cleanPhone,
+      subject: cleanSubject,
+      message: cleanMessage,
+    }).catch((err) => console.error('[Mailer] Contact dispatch error:', err));
+
     return res.status(201).json({ message: 'Enquiry recorded successfully.', id: created.id });
   } catch (err) {
     console.error('Contact enquiry error:', err);

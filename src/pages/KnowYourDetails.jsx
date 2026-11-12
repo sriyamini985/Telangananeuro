@@ -83,7 +83,7 @@ export default function KnowYourDetails() {
       setMemberResult(localMatch);
     } else if (registeredMembersDirectory.length === 0) {
       setStatusMessage(
-        'Member directory records are currently being uploaded by the TNS Secretariat. Please check back shortly or contact telangananeuro@gmail.com to verify your membership details.'
+        'Member directory records are currently being uploaded by the TNS Secretariat. Please check back shortly or contact info@telangananeuro.com to verify your membership details.'
       );
     } else {
       setStatusMessage(

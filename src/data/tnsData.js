@@ -34,7 +34,7 @@ export const societyInfo = {
     treasurerRole: 'Treasurer, Telangana Neurosciences Society (TNS)',
     phone: '040 – 44778899',
     fax: '040 – 66615868',
-    email: 'telangananeuro@gmail.com',
+    email: 'info@telangananeuro.com',
     website: 'https://www.telangananeuro.com',
     websiteDisplay: 'www.telangananeuro.com',
     mapQuery: 'SKS Neuro Hospital Station Road Kachiguda Hyderabad 500027',
