@@ -1,0 +1,314 @@
+@import "tailwindcss";
+
+@theme {
+  /* Official Telangana Neurosciences Society Brand Tokens */
+  --color-tns-primary: #393185;
+  --color-tns-primary-hover: #2D276A;
+  --color-tns-primary-light: #E9E6F5;
+
+  --color-tns-lime: #B0CB1F;
+  --color-tns-lime-light: #EDF3CE;
+
+  --color-tns-gold: #C18C26;
+  --color-tns-gold-light: #F3E6C9;
+
+  --color-tns-cyan: #009DE2;
+  --color-tns-cyan-light: #DDF3FC;
+
+  --color-tns-background: #F7F2E8;
+  --color-tns-background-soft: #F1EADB;
+  --color-tns-surface: #FBF8F1;
+
+  --color-tns-text-primary: #292638;
+  --color-tns-text-secondary: #666477;
+
+  --color-tns-border: #E3DCCF;
+  --color-tns-white: #FFFFFF;
+
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+:root {
+  --tns-primary: #393185;
+  --tns-primary-hover: #2D276A;
+  --tns-primary-light: #E9E6F5;
+
+  --tns-lime: #B0CB1F;
+  --tns-lime-light: #EDF3CE;
+
+  --tns-gold: #C18C26;
+  --tns-gold-light: #F3E6C9;
+
+  --tns-cyan: #009DE2;
+  --tns-cyan-light: #DDF3FC;
+
+  --tns-background: #F7F2E8;
+  --tns-background-soft: #F1EADB;
+  --tns-surface: #FBF8F1;
+
+  --tns-text-primary: #292638;
+  --tns-text-secondary: #666477;
+
+  --tns-border: #E3DCCF;
+  --tns-white: #FFFFFF;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--tns-background);
+  color: var(--tns-text-primary);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-editorial {
+  font-family: var(--font-serif);
+}
+
+/* Accessibility: Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@layer components {
+  /* Ivory Editorial Card / Surface */
+  .tns-surface {
+    background-color: var(--tns-surface);
+    border: 1px solid var(--tns-border);
+    border-radius: 16px;
+    box-shadow: 0 8px 24px -12px rgba(57, 49, 133, 0.08);
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.25s ease;
+  }
+
+  .tns-surface:hover {
+    transform: translateY(-2px);
+    border-color: rgba(57, 49, 133, 0.42);
+    box-shadow: 0 18px 38px -14px rgba(57, 49, 133, 0.16), 0 0 0 1px rgba(193, 140, 38, 0.12);
+  }
+
+  /* Form Input System */
+  .tns-input {
+    width: 100%;
+    background-color: var(--tns-surface);
+    border: 1.5px solid var(--tns-border);
+    border-radius: 10px;
+    padding: 11px 14px;
+    font-size: 14px;
+    color: var(--tns-text-primary);
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .tns-input::placeholder {
+    color: #8C8A9B;
+  }
+
+  .tns-input:focus {
+    border-color: var(--tns-primary);
+    box-shadow: 0 0 0 3px rgba(57, 49, 133, 0.12);
+  }
+
+  /* Primary & Secondary Button Tokens */
+  .tns-btn-primary {
+    background-color: var(--tns-primary);
+    color: var(--tns-surface);
+    font-weight: 600;
+    border-radius: 10px;
+    padding: 12px 24px;
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 6px 18px -6px rgba(57, 49, 133, 0.38);
+  }
+
+  .tns-btn-primary:hover {
+    background-color: var(--tns-primary-hover);
+    transform: translateY(-1px);
+  }
+
+  .tns-btn-secondary {
+    background-color: var(--tns-surface);
+    color: var(--tns-primary);
+    border: 1.5px solid var(--tns-primary);
+    font-weight: 600;
+    border-radius: 10px;
+    padding: 11px 22px;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  }
+
+  .tns-btn-secondary:hover {
+    background-color: var(--tns-primary-light);
+    transform: translateY(-1px);
+  }
+}
+
+/* Inner Page Header Banner with subtle neural constellation texture */
+.tns-page-banner {
+  background: linear-gradient(135deg, #272162 0%, #393185 62%, #443B96 100%);
+  position: relative;
+  overflow: hidden;
+  padding: 64px 0 60px;
+}
+
+@media (max-width: 1023px) {
+  .tns-page-banner {
+    padding: 48px 0 44px;
+  }
+}
+
+.tns-page-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(193, 140, 38, 0.2) 1px, transparent 1px),
+                    radial-gradient(rgba(0, 157, 226, 0.16) 1px, transparent 1px);
+  background-size: 56px 56px, 84px 84px;
+  background-position: 0 0, 28px 34px;
+  opacity: 0.35;
+  animation: tnsNeuralDrift 22s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.tns-page-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 84% 22%, rgba(193, 140, 38, 0.16), transparent 50%),
+              radial-gradient(circle at 12% 85%, rgba(176, 203, 31, 0.12), transparent 45%);
+  pointer-events: none;
+}
+
+.tns-page-banner > div {
+  animation: tnsBannerReveal 0.42s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes tnsBannerReveal {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 10px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Global Neuroscience Animation Keyframes */
+@keyframes tnsAxonTravel {
+  from {
+    stroke-dashoffset: 320;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes tnsSynapsePulse {
+  0%, 100% {
+    opacity: 0.65;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.06);
+  }
+}
+
+@keyframes tnsNeuralDrift {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(-10px, 8px, 0);
+  }
+}
+
+@keyframes tnsLivePing {
+  0% {
+    box-shadow: 0 0 0 0 rgba(176, 203, 31, 0.65);
+  }
+  70% {
+    box-shadow: 0 0 0 7px rgba(176, 203, 31, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(176, 203, 31, 0);
+  }
+}
+
+.tns-live-dot {
+  animation: tnsLivePing 2.6s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.tns-axon-flow {
+  animation: tnsAxonTravel 11s linear infinite;
+}
+
+.tns-axon-flow-slow {
+  animation: tnsAxonTravel 15s linear infinite;
+}
+
+.tns-synapse-pulse {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: tnsSynapsePulse 5.5s ease-in-out infinite;
+}
+
+.tns-synapse-pulse-delayed {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: tnsSynapsePulse 5.5s ease-in-out 2.4s infinite;
+}
+
+.tns-neuro-drift {
+  animation: tnsNeuralDrift 18s ease-in-out infinite;
+}
+
+.tns-neuro-drift-reverse {
+  animation: tnsNeuralDrift 22s ease-in-out infinite reverse;
+}
+
+/* Custom Toast Notification */
+.tns-toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  max-width: calc(100vw - 48px);
+}
+
+/* Scrollbar hiding for horizontal tabs */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Custom Ivory Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--tns-background-soft);
+}
+::-webkit-scrollbar-thumb {
+  background: #CDC4B4;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--tns-primary);
+}

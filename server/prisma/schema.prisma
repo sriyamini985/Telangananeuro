@@ -1,0 +1,54 @@
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Admin {
+  id           Int      @id @default(autoincrement())
+  username     String   @unique
+  passwordHash String
+  role         String   @default("Admin")
+  createdAt    DateTime @default(now())
+}
+
+model MembershipRequest {
+  id               Int      @id @default(autoincrement())
+  name             String
+  email            String
+  phone            String
+  specialty        String
+  category         String   @default("Life Member")
+  hospital         String
+  medicalCouncilNo String?
+  message          String?  @db.Text
+  status           String   @default("Pending")
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
+
+model ContactEnquiry {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String
+  phone     String?
+  subject   String
+  message   String   @db.Text
+  createdAt DateTime @default(now())
+}
+
+model MemberDirectory {
+  id           Int      @id @default(autoincrement())
+  membershipNo String   @unique
+  name         String
+  email        String?
+  phone        String?
+  category     String?
+  specialty    String?
+  city         String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
