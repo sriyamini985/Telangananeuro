@@ -55,7 +55,11 @@ const isAllowedOrigin = (origin) => {
       hostname === 'telangananeuro.com' ||
       hostname === 'www.telangananeuro.com' ||
       hostname === 'telangananeurosociety.org' ||
-      hostname === 'www.telangananeurosociety.org'
+      hostname === 'www.telangananeurosociety.org' ||
+      hostname === 'vercel.app' ||
+      hostname.endsWith('.vercel.app') ||
+      hostname === 'localhost' ||
+      hostname === '127.0.0.1'
     );
   } catch {
     return false;
