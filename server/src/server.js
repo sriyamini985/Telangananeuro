@@ -43,15 +43,16 @@ const extraCorsOrigins = (process.env.CORS_ORIGIN || '')
 
 const isAllowedOrigin = (origin) => {
   if (!origin) return true;
+  if (extraCorsOrigins.includes('*') || extraCorsOrigins.includes(origin)) return true;
   if (
     !IS_PROD &&
     (origin.startsWith('http://localhost:') || origin.startsWith('http://127.0.0.1:'))
   ) {
     return true;
   }
-  if (extraCorsOrigins.includes(origin)) return true;
   try {
-    const hostname = new URL(origin).hostname.toLowerCase();
+    const url = new URL(origin);
+    const hostname = url.hostname.toLowerCase();
     return (
       hostname === 'telangananeuro.com' ||
       hostname === 'www.telangananeuro.com' ||
@@ -98,10 +99,13 @@ app.use(
       if (isAllowedOrigin(origin)) {
         callback(null, true);
       } else {
+        console.warn(`[CORS] Blocked request from unauthorized origin: ${origin}`);
         callback(new Error('CORS_NOT_ALLOWED'));
       }
     },
     credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept'],
   })
 );
 app.use(express.json({ limit: '2mb' }));
