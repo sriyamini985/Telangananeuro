@@ -176,7 +176,7 @@ export const committeeData = {
       specialty: 'Neurology',
       designation: 'Treasurer, Telangana Neurosciences Society',
       initials: 'CT',
-      photoUrl: '/assets/images/committee/dr-chandrakanth-tapsi.jpg',
+      photoUrl: '/assets/images/committee/dr-chandrakanth-tapsi.jpg?v=20261113',
     },
     {
       name: 'Dr. G Sathyanarayana',
