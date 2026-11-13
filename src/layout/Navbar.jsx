@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown, ExternalLink } from 'lucide-react';
 import BrandLogo from '../components/BrandLogo';
 
 const NAV_ITEMS = [
@@ -62,6 +62,7 @@ const NAV_ITEMS = [
     matchPaths: ['/events'],
     children: [
       { label: 'Upcoming Conference (TNSCON 2027)', to: '/events/tnscon-2027' },
+      { label: 'Conference Website (tnscon2027hyd.com)', to: 'https://www.tnscon2027hyd.com/', external: true },
       { label: 'Past Conference', to: '/events?filter=Past' },
       { label: 'Webinar & Symposia', to: '/events' },
       { label: 'Workshop & CME', to: '/events?filter=Workshop' },
@@ -211,16 +212,30 @@ export default function Navbar() {
                           transition={{ duration: 0.16 }}
                           className="absolute left-0 top-full w-60 bg-[#FBF8F1] text-[#292638] rounded-b-xl shadow-xl border border-[#E3DCCF] border-t-2 border-t-[#C18C26] py-1.5 flex flex-col z-50 text-left"
                         >
-                          {item.children.map((sub) => (
-                            <Link
-                              key={sub.label}
-                              to={sub.to}
-                              onClick={() => setOpenDropdown(null)}
-                              className="px-4 py-2.5 text-[13px] font-medium text-[#292638] hover:bg-[#E9E6F5] hover:text-[#393185] transition-colors border-b border-[#E3DCCF]/50 last:border-b-0"
-                            >
-                              {sub.label}
-                            </Link>
-                          ))}
+                          {item.children.map((sub) =>
+                            sub.external ? (
+                              <a
+                                key={sub.label}
+                                href={sub.to}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                onClick={() => setOpenDropdown(null)}
+                                className="px-4 py-2.5 text-[13px] font-medium text-[#292638] hover:bg-[#E9E6F5] hover:text-[#393185] transition-colors border-b border-[#E3DCCF]/50 last:border-b-0 flex items-center justify-between"
+                              >
+                                <span>{sub.label}</span>
+                                <ExternalLink className="w-3.5 h-3.5 text-[#C18C26]" />
+                              </a>
+                            ) : (
+                              <Link
+                                key={sub.label}
+                                to={sub.to}
+                                onClick={() => setOpenDropdown(null)}
+                                className="px-4 py-2.5 text-[13px] font-medium text-[#292638] hover:bg-[#E9E6F5] hover:text-[#393185] transition-colors border-b border-[#E3DCCF]/50 last:border-b-0"
+                              >
+                                {sub.label}
+                              </Link>
+                            )
+                          )}
                         </motion.div>
                       )}
                     </AnimatePresence>
@@ -337,16 +352,30 @@ export default function Navbar() {
 
                       {expanded && (
                         <div className="flex flex-col gap-1 pl-5 pb-3 border-l-2 border-[#C18C26] ml-3 mb-2">
-                          {item.children.map((sub) => (
-                            <Link
-                              key={sub.label}
-                              to={sub.to}
-                              onClick={() => setMobileOpen(false)}
-                              className="min-h-[40px] flex items-center py-1.5 px-2 rounded-md text-[13.5px] font-medium text-[#666477] hover:text-[#393185] hover:bg-[#E9E6F5]/40"
-                            >
-                              {sub.label}
-                            </Link>
-                          ))}
+                          {item.children.map((sub) =>
+                            sub.external ? (
+                              <a
+                                key={sub.label}
+                                href={sub.to}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                onClick={() => setMobileOpen(false)}
+                                className="min-h-[40px] flex items-center justify-between py-1.5 px-2 rounded-md text-[13.5px] font-medium text-[#666477] hover:text-[#393185] hover:bg-[#E9E6F5]/40"
+                              >
+                                <span>{sub.label}</span>
+                                <ExternalLink className="w-3.5 h-3.5 text-[#C18C26]" />
+                              </a>
+                            ) : (
+                              <Link
+                                key={sub.label}
+                                to={sub.to}
+                                onClick={() => setMobileOpen(false)}
+                                className="min-h-[40px] flex items-center py-1.5 px-2 rounded-md text-[13.5px] font-medium text-[#666477] hover:text-[#393185] hover:bg-[#E9E6F5]/40"
+                              >
+                                {sub.label}
+                              </Link>
+                            )
+                          )}
                         </div>
                       )}
                     </div>

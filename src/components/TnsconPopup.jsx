@@ -144,12 +144,12 @@ export default function TnsconPopup({ isOpen, onClose }) {
 
                 <div className="mt-6 flex flex-wrap items-center gap-3">
                   <a
-                    href="https://tnscon2027hyd.com/"
+                    href="https://www.tnscon2027hyd.com/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="tns-btn-primary inline-flex items-center gap-2 text-[14px]"
                   >
-                    <span>Submit Abstract / Visit Portal</span>
+                    <span>Visit Conference (www.tnscon2027hyd.com)</span>
                     <ArrowRight className="w-4 h-4 text-[#B0CB1F]" />
                     <ExternalLink className="w-3.5 h-3.5 opacity-80" />
                   </a>

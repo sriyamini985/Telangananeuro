@@ -63,7 +63,7 @@ export default function EventDetails() {
                     rel="noopener noreferrer"
                     className="tns-btn-primary inline-flex items-center gap-2 text-xs"
                   >
-                    <span>Visit Official TNSCON 2027 Website</span>
+                    <span>Visit Official Conference Website (www.tnscon2027hyd.com)</span>
                     <ExternalLink className="w-3.5 h-3.5 text-[#B0CB1F]" />
                   </a>
                 </div>
@@ -124,7 +124,15 @@ export default function EventDetails() {
                       </div>
                       <div className="p-3 rounded-lg bg-white border border-[#E3DCCF]">
                         <span className="font-bold text-[#393185] block">Submission Mode:</span>
-                        <span className="text-[#666477]">{event.abstractGuidelines.submission}</span>
+                        <a
+                          href="https://www.tnscon2027hyd.com/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[#393185] font-semibold hover:text-[#C18C26] hover:underline inline-flex items-center gap-1 mt-0.5"
+                        >
+                          <span>Online at www.tnscon2027hyd.com</span>
+                          <ExternalLink className="w-3 h-3 text-[#C18C26]" />
+                        </a>
                       </div>
                       <div className="p-3 rounded-lg bg-white border border-[#E3DCCF] sm:col-span-2">
                         <span className="font-bold text-[#393185] block">Notification:</span>

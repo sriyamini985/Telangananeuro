@@ -235,7 +235,7 @@ export default function Home({ onOpenConferencePopup }) {
                   rel="noopener noreferrer"
                   className="bg-[#C18C26] hover:bg-[#AE7C1E] text-[#FBF8F1] font-semibold text-[13.5px] px-6 py-3 rounded-lg inline-flex items-center gap-2 transition-colors"
                 >
-                  <span>Visit Conference</span>
+                  <span>Visit Conference Website</span>
                   <ArrowRight className="w-4 h-4" />
                   <ExternalLink className="w-3.5 h-3.5 opacity-85" />
                 </a>

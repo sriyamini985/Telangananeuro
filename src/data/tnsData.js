@@ -314,7 +314,7 @@ export const eventsData = [
     city: 'Hyderabad, Telangana',
     summary:
       'The 11th Annual Conference of the Telangana Neurosciences Society featuring three days of scientific learning, neurosurgery & neurology plenaries, academic discussions, and collaboration.',
-    externalUrl: 'https://tnscon2027hyd.com/',
+    externalUrl: 'https://www.tnscon2027hyd.com/',
     leadership: {
       organizingChairman: 'Dr. R T S Naik',
       organizingSecretary: 'Dr. Chandrakanth Tapsi',

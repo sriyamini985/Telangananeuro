@@ -81,12 +81,12 @@ export default function Footer() {
             </li>
             <li>
               <a
-                href="https://tnscon2027hyd.com/"
+                href="https://www.tnscon2027hyd.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 hover:text-[#B0CB1F] transition-colors"
               >
-                <span>tnscon2027hyd.com</span>
+                <span>www.tnscon2027hyd.com</span>
                 <ExternalLink className="w-3.5 h-3.5 text-[#C18C26]" />
               </a>
             </li>
