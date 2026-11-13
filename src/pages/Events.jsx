@@ -3,7 +3,7 @@ import { Link, useSearchParams } from 'react-router-dom';
 import { Calendar, MapPin, ArrowRight, ExternalLink, Clock } from 'lucide-react';
 import SeoHead from '../components/SeoHead';
 import ComingSoon from '../components/ComingSoon';
-import tnsconPosterImg from '../assets/images/tnscon_2027_poster.jpg';
+import tnsconPosterImg from '../assets/images/tnscon_abstracts_poster.jpg';
 import { eventsData, newsAnnouncements } from '../data/tnsData';
 
 export default function Events() {

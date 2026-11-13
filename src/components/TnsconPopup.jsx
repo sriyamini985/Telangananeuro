@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { Calendar, ExternalLink, MapPin, X, ArrowRight } from 'lucide-react';
-import tnsconPoster from '../assets/images/tnscon_2027_poster.jpg';
+import tnsconPoster from '../assets/images/tnscon_abstracts_poster.jpg';
 import tnsconLogo from '../assets/images/tnscon_logo.png';
 
 /**
@@ -80,8 +80,8 @@ export default function TnsconPopup({ isOpen, onClose }) {
               <div className="md:col-span-5 bg-[#2A2368] flex flex-col justify-center gap-3.5 p-4 sm:p-5 relative overflow-hidden">
                 <div className="flex items-center justify-between gap-2 pr-10 md:pr-0 relative z-10">
                   <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/15 border border-white/25 text-[10.5px] font-bold uppercase tracking-wider text-white">
-                    <span className="w-2 h-2 rounded-full bg-[#B0CB1F]" />
-                    Upcoming Conference
+                    <span className="w-2 h-2 rounded-full bg-[#B0CB1F] animate-pulse" />
+                    Call for Abstracts
                   </span>
                   <img
                     src={tnsconLogo}
@@ -90,11 +90,11 @@ export default function TnsconPopup({ isOpen, onClose }) {
                   />
                 </div>
 
-                <div className="w-full max-w-[235px] sm:max-w-[265px] md:max-w-full mx-auto rounded-xl overflow-hidden border border-white/25 shadow-xl bg-[#FBF8F1] p-1 relative z-10">
+                <div className="w-full max-w-[280px] sm:max-w-[320px] md:max-w-full mx-auto rounded-xl overflow-hidden border border-white/25 shadow-xl bg-[#FBF8F1] p-1 relative z-10">
                   <img
                     src={tnsconPoster}
-                    alt="TNSCON 2027 — 11th Annual Conference of Telangana Neurosciences Society"
-                    className="w-full h-auto aspect-[4/5] rounded-lg object-contain block"
+                    alt="TNSCON 2027 — Call for Abstracts Official Flyer"
+                    className="w-full h-auto aspect-square rounded-lg object-contain block"
                   />
                 </div>
               </div>
@@ -112,6 +112,11 @@ export default function TnsconPopup({ isOpen, onClose }) {
                   TNSCON 2027
                 </h2>
 
+                <div className="mt-2.5 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EDF3CE] border border-[#B0CB1F]/40 text-[#292638] text-xs font-bold w-fit">
+                  <span className="w-2 h-2 rounded-full bg-[#C18C26] animate-pulse" />
+                  <span>Call for Abstracts Open • Deadline: 31 Jan 2027</span>
+                </div>
+
                 <div className="mt-4 space-y-2.5 bg-white/90 border border-[#E3DCCF] rounded-xl p-4">
                   <div className="flex items-start gap-2.5 text-[13.5px]">
                     <Calendar className="w-4 h-4 text-[#C18C26] shrink-0 mt-0.5" />
@@ -125,16 +130,16 @@ export default function TnsconPopup({ isOpen, onClose }) {
                     <div>
                       <span className="font-bold text-[#393185]">Venue: </span>
                       <span className="text-[#292638] font-medium">
-                        Conference Hall, Rajiv Gandhi Terminal, Begumpet Airport, Hyderabad,
-                        Telangana
+                        Conference Hall, Rajiv Gandhi Terminal, Begumpet Airport, Hyderabad
                       </span>
                     </div>
                   </div>
                 </div>
 
                 <p className="text-[14px] text-[#555365] leading-relaxed mt-4">
-                  Join neurologists, neurosurgeons, researchers, and medical professionals for
-                  three days of scientific learning, academic discussions, and collaboration.
+                  The Organising Committee cordially invites researchers, clinicians, neurologists,
+                  neurosurgeons, and postgraduates to submit original research in <strong>Award Paper</strong>,{' '}
+                  <strong>Free Paper</strong>, or <strong>Poster Presentation</strong> categories.
                 </p>
 
                 <div className="mt-6 flex flex-wrap items-center gap-3">
@@ -144,7 +149,7 @@ export default function TnsconPopup({ isOpen, onClose }) {
                     rel="noopener noreferrer"
                     className="tns-btn-primary inline-flex items-center gap-2 text-[14px]"
                   >
-                    <span>Visit Conference</span>
+                    <span>Submit Abstract / Visit Portal</span>
                     <ArrowRight className="w-4 h-4 text-[#B0CB1F]" />
                     <ExternalLink className="w-3.5 h-3.5 opacity-80" />
                   </a>

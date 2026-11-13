@@ -16,7 +16,8 @@ import {
 import SeoHead from '../components/SeoHead';
 import HomeHero from '../components/HomeHero';
 import aboutNeuroImg from '../assets/images/about_neuroscience.jpg';
-import tnsconPosterImg from '../assets/images/tnscon_2027_poster.jpg';
+import tnsconAbstractsPoster from '../assets/images/tnscon_abstracts_poster.jpg';
+import tnsconCommitteePoster from '../assets/images/tnscon_committee_poster.jpg';
 import {
   societyInfo,
   societyMessages,
@@ -44,6 +45,7 @@ function useCountdown(targetISO) {
 }
 
 export default function Home({ onOpenConferencePopup }) {
+  const [activePosterTab, setActivePosterTab] = useState('abstracts');
   const flagshipEvent = eventsData.find((e) => e.featured) || eventsData[0];
   const countdown = useCountdown(flagshipEvent.startDateISO);
   const topNotice = newsAnnouncements[0];
@@ -256,11 +258,40 @@ export default function Home({ onOpenConferencePopup }) {
               </div>
             </div>
 
-            <div className="lg:col-span-5 flex justify-center">
+            <div className="lg:col-span-5 flex flex-col items-center">
+              <div className="flex items-center gap-1.5 p-1 rounded-xl bg-[#2D276A] border border-[#FBF8F1]/15 mb-3 text-xs font-semibold">
+                <button
+                  type="button"
+                  onClick={() => setActivePosterTab('abstracts')}
+                  className={`px-3 py-1.5 rounded-lg transition-colors cursor-pointer ${
+                    activePosterTab === 'abstracts'
+                      ? 'bg-[#B0CB1F] text-[#292638] font-bold shadow-sm'
+                      : 'text-[#FBF8F1]/80 hover:text-white'
+                  }`}
+                >
+                  Call for Abstracts
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setActivePosterTab('committee')}
+                  className={`px-3 py-1.5 rounded-lg transition-colors cursor-pointer ${
+                    activePosterTab === 'committee'
+                      ? 'bg-[#B0CB1F] text-[#292638] font-bold shadow-sm'
+                      : 'text-[#FBF8F1]/80 hover:text-white'
+                  }`}
+                >
+                  Committee Flyer
+                </button>
+              </div>
+
               <div className="bg-[#FBF8F1] p-3 rounded-2xl border border-[#E3DCCF] shadow-xl max-w-sm w-full">
                 <img
-                  src={tnsconPosterImg}
-                  alt="TNSCON 2027 Official Announcement Poster"
+                  src={activePosterTab === 'abstracts' ? tnsconAbstractsPoster : tnsconCommitteePoster}
+                  alt={
+                    activePosterTab === 'abstracts'
+                      ? 'TNSCON 2027 Call for Abstracts Flyer'
+                      : 'TNSCON 2027 Organizing & Scientific Committee Announcement'
+                  }
                   className="w-full h-auto rounded-xl object-contain"
                   loading="lazy"
                 />

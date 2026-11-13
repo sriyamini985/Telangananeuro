@@ -2,7 +2,8 @@ import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { ArrowLeft, Calendar, MapPin, ExternalLink, CheckCircle2 } from 'lucide-react';
 import SeoHead from '../components/SeoHead';
-import tnsconPosterImg from '../assets/images/tnscon_2027_poster.jpg';
+import tnsconAbstractsPoster from '../assets/images/tnscon_abstracts_poster.jpg';
+import tnsconCommitteePoster from '../assets/images/tnscon_committee_poster.jpg';
 import { eventsData, societyInfo } from '../data/tnsData';
 
 export default function EventDetails() {
@@ -69,6 +70,91 @@ export default function EventDetails() {
               )}
             </div>
 
+            {/* Call for Abstracts Detail Section */}
+            {event.submissionCategories && (
+              <div className="tns-surface p-7 space-y-6">
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                  <div>
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#C18C26] block">
+                      Scientific Submissions
+                    </span>
+                    <h2 className="font-editorial text-2xl font-bold text-[#393185]">
+                      Call for Abstracts
+                    </h2>
+                  </div>
+                  <div className="px-3.5 py-1.5 rounded-full bg-[#EDF3CE] border border-[#B0CB1F]/40 text-[#292638] text-xs font-bold">
+                    Last Date: {event.abstractSubmissionDeadline || '31st January 2027'}
+                  </div>
+                </div>
+
+                <div>
+                  <h3 className="text-xs font-bold uppercase tracking-wider text-[#393185] mb-3">
+                    Submission Categories
+                  </h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                    {event.submissionCategories.map((cat) => (
+                      <div
+                        key={cat}
+                        className="p-3.5 rounded-xl bg-[#F7F2E8] border border-[#E3DCCF] flex items-center gap-2.5"
+                      >
+                        <span className="w-2 h-2 rounded-full bg-[#B0CB1F] shrink-0" />
+                        <span className="text-xs font-semibold text-[#292638]">{cat}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {event.abstractGuidelines && (
+                  <div>
+                    <h3 className="text-xs font-bold uppercase tracking-wider text-[#393185] mb-3">
+                      Abstract Submission Guidelines
+                    </h3>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 text-xs">
+                      <div className="p-3 rounded-lg bg-white border border-[#E3DCCF]">
+                        <span className="font-bold text-[#393185] block">Format:</span>
+                        <span className="text-[#666477]">{event.abstractGuidelines.format}</span>
+                      </div>
+                      <div className="p-3 rounded-lg bg-white border border-[#E3DCCF]">
+                        <span className="font-bold text-[#393185] block">Sections:</span>
+                        <span className="text-[#666477]">{event.abstractGuidelines.sections}</span>
+                      </div>
+                      <div className="p-3 rounded-lg bg-white border border-[#E3DCCF]">
+                        <span className="font-bold text-[#393185] block">Word Limit:</span>
+                        <span className="text-[#666477]">{event.abstractGuidelines.wordLimit}</span>
+                      </div>
+                      <div className="p-3 rounded-lg bg-white border border-[#E3DCCF]">
+                        <span className="font-bold text-[#393185] block">Submission Mode:</span>
+                        <span className="text-[#666477]">{event.abstractGuidelines.submission}</span>
+                      </div>
+                      <div className="p-3 rounded-lg bg-white border border-[#E3DCCF] sm:col-span-2">
+                        <span className="font-bold text-[#393185] block">Notification:</span>
+                        <span className="text-[#666477]">{event.abstractGuidelines.notification}</span>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {event.abstractTopics && (
+                  <div>
+                    <h3 className="text-xs font-bold uppercase tracking-wider text-[#393185] mb-3">
+                      Abstract Topics &amp; Focus Areas
+                    </h3>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                      {event.abstractTopics.map((topic) => (
+                        <div
+                          key={topic}
+                          className="px-3.5 py-2.5 rounded-lg bg-[#F7F2E8] border border-[#E3DCCF] flex items-center gap-2.5 text-xs font-medium text-[#292638]"
+                        >
+                          <CheckCircle2 className="w-3.5 h-3.5 text-[#393185] shrink-0" />
+                          <span>{topic}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            )}
+
             {event.tracks && (
               <div className="tns-surface p-7">
                 <h2 className="font-editorial text-2xl font-bold text-[#393185] mb-4">
@@ -126,12 +212,28 @@ export default function EventDetails() {
           {/* Right Sidebar */}
           <div className="lg:col-span-4 space-y-6">
             {event.featured && (
-              <div className="tns-surface p-4">
-                <img
-                  src={tnsconPosterImg}
-                  alt={event.shortTitle}
-                  className="w-full rounded-xl object-contain"
-                />
+              <div className="space-y-4">
+                <div className="tns-surface p-3.5">
+                  <span className="text-[10.5px] font-bold uppercase tracking-wider text-[#C18C26] block mb-2 px-1">
+                    Call for Abstracts Flyer
+                  </span>
+                  <img
+                    src={tnsconAbstractsPoster}
+                    alt="TNSCON 2027 Call for Abstracts Flyer"
+                    className="w-full rounded-xl object-contain border border-[#E3DCCF]"
+                  />
+                </div>
+
+                <div className="tns-surface p-3.5">
+                  <span className="text-[10.5px] font-bold uppercase tracking-wider text-[#C18C26] block mb-2 px-1">
+                    Organising &amp; Scientific Committee Announcement
+                  </span>
+                  <img
+                    src={tnsconCommitteePoster}
+                    alt="TNSCON 2027 Organizing & Scientific Committee Flyer"
+                    className="w-full rounded-xl object-contain border border-[#E3DCCF]"
+                  />
+                </div>
               </div>
             )}
 
@@ -149,13 +251,21 @@ export default function EventDetails() {
                     <strong className="text-[#393185] block">Organising Secretary</strong>
                     <span className="text-[#666477]">{event.leadership.organizingSecretary}</span>
                   </div>
-                  <div>
-                    <strong className="text-[#393185] block">Scientific Committee</strong>
+                  {event.leadership.jointOrganisingSecretary && (
+                    <div>
+                      <strong className="text-[#393185] block">Joint Organising Secretary</strong>
+                      <span className="text-[#666477]">{event.leadership.jointOrganisingSecretary}</span>
+                    </div>
+                  )}
+                  <div className="pt-1 border-t border-[#E3DCCF]">
+                    <strong className="text-[#393185] block mb-1">Scientific Committee</strong>
                     <span className="text-[#666477] block">
-                      Neurosurgery: {event.leadership.scientificNeurosurgery}
+                      <strong className="text-[#292638]">Neurosurgery: </strong>
+                      {event.leadership.scientificNeurosurgery}
                     </span>
-                    <span className="text-[#666477] block">
-                      Neurology: {event.leadership.scientificNeurology}
+                    <span className="text-[#666477] block mt-0.5">
+                      <strong className="text-[#292638]">Neurology: </strong>
+                      {event.leadership.scientificNeurology}
                     </span>
                   </div>
                 </div>

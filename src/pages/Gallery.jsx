@@ -2,12 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { X } from 'lucide-react';
 import SeoHead from '../components/SeoHead';
 import ComingSoon from '../components/ComingSoon';
-import tnsconPosterImg from '../assets/images/tnscon_2027_poster.jpg';
+import tnsconAbstractsPoster from '../assets/images/tnscon_abstracts_poster.jpg';
+import tnsconCommitteePoster from '../assets/images/tnscon_committee_poster.jpg';
 import aboutNeuroImg from '../assets/images/about_neuroscience.jpg';
 import { galleryItems } from '../data/tnsData';
 
 const imageMap = {
-  tnscon_poster: tnsconPosterImg,
+  tnscon_abstracts: tnsconAbstractsPoster,
+  tnscon_committee: tnsconCommitteePoster,
+  tnscon_poster: tnsconAbstractsPoster,
   about_neuro: aboutNeuroImg,
 };
 
