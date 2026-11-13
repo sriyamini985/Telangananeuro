@@ -456,4 +456,12 @@ export const galleryItems = [
     imageKey: 'tnscon_committee',
     isComingSoon: false,
   },
+  {
+    id: 'gal-committee-group',
+    category: 'Society Activities',
+    title: 'Telangana Neurosciences Society Leadership & Executive Committee',
+    caption: 'Official group photograph of the Office Bearers, Advisory Council, and Executive Committee of the Telangana Neurosciences Society.',
+    imageKey: 'about_neuro',
+    isComingSoon: false,
+  },
 ];

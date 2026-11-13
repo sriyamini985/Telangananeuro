@@ -49,7 +49,7 @@ export default function About() {
               <div className="aspect-[16/10] w-full overflow-hidden bg-[#E9E6F5]">
                 <img
                   src={aboutNeuroImg}
-                  alt="Telangana Neurosciences Society Grand Rounds"
+                  alt="Telangana Neurosciences Society Leadership and Executive Committee"
                   className="w-full h-full object-cover object-center"
                 />
               </div>

@@ -76,7 +76,7 @@ export default function Home({ onOpenConferencePopup }) {
                 <div className="aspect-[16/10] w-full overflow-hidden bg-[#E9E6F5]">
                   <img
                     src={aboutNeuroImg}
-                    alt="Neurosciences academic symposium and clinical grand rounds"
+                    alt="Telangana Neurosciences Society Leadership and Executive Committee"
                     className="w-full h-full object-cover object-center"
                     loading="lazy"
                   />
