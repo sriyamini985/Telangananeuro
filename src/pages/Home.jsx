@@ -135,7 +135,6 @@ export default function Home({ onOpenConferencePopup }) {
                     <strong className="font-editorial text-[16px] text-[#393185] block mt-0.5">
                       {societyMessages.president.author}
                     </strong>
-                    <span className="text-xs text-[#666477]">Neurosurgery Leadership</span>
                   </div>
                 </div>
                 <div className="p-4 rounded-xl bg-[#FBF8F1] border border-[#E3DCCF] flex items-center gap-3.5">
@@ -152,7 +151,6 @@ export default function Home({ onOpenConferencePopup }) {
                     <strong className="font-editorial text-[16px] text-[#393185] block mt-0.5">
                       {societyMessages.secretary.author}
                     </strong>
-                    <span className="text-xs text-[#666477]">Secretariat &amp; Administration</span>
                   </div>
                 </div>
               </div>

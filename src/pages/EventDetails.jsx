@@ -268,11 +268,9 @@ export default function EventDetails() {
                   <div className="pt-1 border-t border-[#E3DCCF]">
                     <strong className="text-[#393185] block mb-1">Scientific Committee</strong>
                     <span className="text-[#666477] block">
-                      <strong className="text-[#292638]">Neurosurgery: </strong>
                       {event.leadership.scientificNeurosurgery}
                     </span>
                     <span className="text-[#666477] block mt-0.5">
-                      <strong className="text-[#292638]">Neurology: </strong>
                       {event.leadership.scientificNeurology}
                     </span>
                   </div>

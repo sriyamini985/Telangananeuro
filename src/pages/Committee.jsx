@@ -46,19 +46,15 @@ function MemberPortrait({
 
 export default function Committee() {
   const [query, setQuery] = useState('');
-  const [specialtyFilter, setSpecialtyFilter] = useState('All');
 
   const filterMember = (m) => {
     const q = query.trim().toLowerCase();
-    const matchesText =
+    return (
       !q ||
       m.name.toLowerCase().includes(q) ||
       m.role.toLowerCase().includes(q) ||
-      (m.specialty && m.specialty.toLowerCase().includes(q));
-    const matchesSpec =
-      specialtyFilter === 'All' ||
-      (m.specialty && m.specialty.toLowerCase() === specialtyFilter.toLowerCase());
-    return matchesText && matchesSpec;
+      (m.designation && m.designation.toLowerCase().includes(q))
+    );
   };
 
   const officeBearers = committeeData.officeBearers.filter(filterMember);
@@ -91,32 +87,18 @@ export default function Committee() {
       </section>
 
       <div className="max-w-7xl mx-auto px-6 py-12 lg:py-16 space-y-14 relative z-10">
-        {/* Search & Specialty Filter */}
-        <div className="tns-surface p-4 flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
-          <div className="flex flex-wrap gap-2">
-            {['All', 'Neurosurgery', 'Neurology', 'Neurosciences'].map((spec) => (
-              <button
-                key={spec}
-                type="button"
-                onClick={() => setSpecialtyFilter(spec)}
-                className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-colors cursor-pointer ${
-                  specialtyFilter === spec
-                    ? 'bg-[#393185] text-[#FBF8F1]'
-                    : 'bg-[#F1EADB] text-[#292638] hover:bg-[#E9E6F5]'
-                }`}
-              >
-                {spec}
-              </button>
-            ))}
-          </div>
-
-          <div className="relative w-full md:w-72">
+        {/* Search */}
+        <div className="tns-surface p-4 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
+          <p className="text-xs font-semibold text-[#666477]">
+            Telangana Neurosciences Society Committee Directory
+          </p>
+          <div className="relative w-full sm:w-80">
             <Search className="w-4 h-4 text-[#666477] absolute left-3 top-1/2 -translate-y-1/2" />
             <input
               type="text"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="Search member or designation..."
+              placeholder="Search by member name or role..."
               className="tns-input pl-9 py-2 text-xs"
               aria-label="Search committee members"
             />
@@ -151,8 +133,7 @@ export default function Committee() {
                     <h3 className="font-editorial text-lg font-bold text-[#393185] mt-1.5">
                       {m.name}
                     </h3>
-                    <p className="text-xs text-[#666477] mt-0.5">{m.designation}</p>
-                    <p className="text-[11px] font-semibold text-[#C18C26] mt-1">{m.specialty}</p>
+                    <p className="text-xs font-medium text-[#666477] mt-0.5">{m.designation}</p>
                   </div>
                 </div>
               ))}
@@ -189,7 +170,6 @@ export default function Committee() {
                     <h3 className="font-editorial font-bold text-[16px] text-[#393185]">
                       {adv.name}
                     </h3>
-                    <p className="text-xs text-[#666477]">{adv.specialty}</p>
                   </div>
                 </div>
               ))}
@@ -210,12 +190,11 @@ export default function Committee() {
             </div>
 
             <div className="overflow-x-auto tns-surface">
-              <table className="w-full min-w-[520px] text-left border-collapse">
+              <table className="w-full min-w-[440px] text-left border-collapse">
                 <thead>
                   <tr className="border-b border-[#E3DCCF] bg-[#F1EADB] text-[#393185] text-xs uppercase tracking-wider">
                     <th className="py-3.5 px-5 font-bold">Member Name</th>
                     <th className="py-3.5 px-5 font-bold">Role</th>
-                    <th className="py-3.5 px-5 font-bold">Specialty</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-[#E3DCCF] text-[13.5px]">
@@ -234,7 +213,6 @@ export default function Committee() {
                         </div>
                       </td>
                       <td className="py-3 px-5 text-[#393185] font-medium">{member.role}</td>
-                      <td className="py-3 px-5 text-[#666477]">{member.specialty}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -272,7 +250,6 @@ export default function Committee() {
                     <h3 className="font-editorial font-bold text-[15px] text-[#393185] mt-0.5">
                       {f.name}
                     </h3>
-                    <p className="text-xs text-[#666477] mt-0.5">{f.specialty}</p>
                   </div>
                 </div>
               ))}
