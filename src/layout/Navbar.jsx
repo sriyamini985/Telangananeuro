@@ -44,7 +44,7 @@ const NAV_ITEMS = [
     children: [
       { label: 'Office Bearers', to: '/committee' },
       { label: 'Past Presidents', to: '/committee#past-presidents' },
-      { label: 'Executive & Ex-Officio Members', to: '/committee#executive' },
+      { label: 'Executive Committee Members', to: '/committee#executive' },
       { label: 'Advisors & Founder Members', to: '/committee#founders' },
     ],
   },

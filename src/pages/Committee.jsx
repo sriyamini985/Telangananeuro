@@ -177,46 +177,35 @@ export default function Committee() {
           </section>
         )}
 
-        {/* 3. Ex-Officio & Executive Committee Members */}
+        {/* 3. Executive Committee Members */}
         {(exOfficio.length > 0 || execMembers.length > 0) && (
           <section id="executive" className="text-left space-y-6 scroll-mt-16">
             <div className="border-b border-[#E3DCCF] pb-3">
-              <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#C18C26]">
-                Executive Council
-              </span>
-              <h2 className="font-editorial text-2xl font-bold text-[#393185] mt-1">
-                Executive Members &amp; Ex-Officio Members
+              <h2 className="font-editorial text-2xl sm:text-3xl font-bold text-[#393185]">
+                Executive Committee Members
               </h2>
             </div>
 
-            <div className="overflow-x-auto tns-surface">
-              <table className="w-full min-w-[440px] text-left border-collapse">
-                <thead>
-                  <tr className="border-b border-[#E3DCCF] bg-[#F1EADB] text-[#393185] text-xs uppercase tracking-wider">
-                    <th className="py-3.5 px-5 font-bold">Member Name</th>
-                    <th className="py-3.5 px-5 font-bold">Role</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-[#E3DCCF] text-[13.5px]">
-                  {[...execMembers, ...exOfficio].map((member) => (
-                    <tr key={member.name} className="hover:bg-[#F7F2E8]/70 transition-colors">
-                      <td className="py-3 px-5 font-semibold text-[#292638]">
-                        <div className="flex items-center gap-3">
-                          <MemberPortrait
-                            photoUrl={member.photoUrl}
-                            name={member.name}
-                            initials={member.initials}
-                            sizeClass="w-10 h-10"
-                            fallbackClass="bg-[#E9E6F5] text-[#393185] text-xs"
-                          />
-                          <span>{member.name}</span>
-                        </div>
-                      </td>
-                      <td className="py-3 px-5 text-[#393185] font-medium">{member.role}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+              {[...execMembers, ...exOfficio].map((member) => (
+                <div
+                  key={member.name}
+                  className="tns-surface p-4 flex items-center gap-3.5 hover:border-[#C18C26]/50 transition-colors"
+                >
+                  <MemberPortrait
+                    photoUrl={member.photoUrl}
+                    name={member.name}
+                    initials={member.initials}
+                    sizeClass="w-14 h-14"
+                    fallbackClass="bg-[#E9E6F5] text-[#393185] text-base"
+                  />
+                  <div className="min-w-0">
+                    <h3 className="font-editorial font-bold text-[15px] sm:text-[16px] text-[#393185] leading-snug">
+                      {member.name}
+                    </h3>
+                  </div>
+                </div>
+              ))}
             </div>
           </section>
         )}
