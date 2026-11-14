@@ -128,38 +128,6 @@ export default function HomeHero({ onOpenConferencePopup }) {
                 </button>
               )}
             </motion.div>
-
-            {/* Restrained Discipline Strip */}
-            <motion.div
-              custom={5}
-              variants={fadeUp}
-              className="w-full grid grid-cols-1 min-[400px]:grid-cols-3 gap-3.5 sm:gap-4 mt-7 sm:mt-9 pt-5 sm:pt-6 border-t border-[#E3DCCF] max-w-lg"
-            >
-              <div>
-                <span className="block text-[11px] font-bold uppercase tracking-wider text-[#C18C26]">
-                  Neurology
-                </span>
-                <span className="text-[12.5px] font-medium text-[#292638] mt-0.5 block">
-                  Clinical &amp; Stroke Care
-                </span>
-              </div>
-              <div>
-                <span className="block text-[11px] font-bold uppercase tracking-wider text-[#393185]">
-                  Neurosurgery
-                </span>
-                <span className="text-[12.5px] font-medium text-[#292638] mt-0.5 block">
-                  Cranial &amp; Spinal Mastery
-                </span>
-              </div>
-              <div>
-                <span className="block text-[11px] font-bold uppercase tracking-wider text-[#6E8210]">
-                  Research &amp; CME
-                </span>
-                <span className="text-[12.5px] font-medium text-[#292638] mt-0.5 block">
-                  Academic Collaboration
-                </span>
-              </div>
-            </motion.div>
           </motion.div>
 
           {/* RIGHT SIDE: Realistic 3D Anatomical Human Brain */}
