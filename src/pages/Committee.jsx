@@ -30,7 +30,7 @@ function MemberPortrait({
         alt={name}
         onError={() => setImgError(true)}
         loading="lazy"
-        className={`${sizeClass} rounded-xl object-cover object-top shrink-0 border border-[#E3DCCF] border-b-2 border-b-[#C18C26] bg-[#FAF6ED] shadow-xs`}
+        className={`${sizeClass} rounded-xl object-cover object-center shrink-0 border border-[#E3DCCF] border-b-2 border-b-[#C18C26] bg-[#FAF6ED] shadow-xs`}
       />
     );
   }

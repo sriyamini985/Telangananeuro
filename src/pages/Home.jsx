@@ -126,7 +126,7 @@ export default function Home({ onOpenConferencePopup }) {
                     src={societyMessages.president.photoUrl}
                     alt={societyMessages.president.author}
                     loading="lazy"
-                    className="w-12 h-12 rounded-xl object-cover object-top border border-[#E3DCCF] border-b-2 border-b-[#C18C26] shrink-0"
+                    className="w-12 h-12 rounded-xl object-cover object-center border border-[#E3DCCF] border-b-2 border-b-[#C18C26] shrink-0"
                   />
                   <div className="min-w-0">
                     <span className="block text-[10.5px] uppercase tracking-wider text-[#C18C26] font-bold">
@@ -142,7 +142,7 @@ export default function Home({ onOpenConferencePopup }) {
                     src={societyMessages.secretary.photoUrl}
                     alt={societyMessages.secretary.author}
                     loading="lazy"
-                    className="w-12 h-12 rounded-xl object-cover object-top border border-[#E3DCCF] border-b-2 border-b-[#C18C26] shrink-0"
+                    className="w-12 h-12 rounded-xl object-cover object-center border border-[#E3DCCF] border-b-2 border-b-[#C18C26] shrink-0"
                   />
                   <div className="min-w-0">
                     <span className="block text-[10.5px] uppercase tracking-wider text-[#C18C26] font-bold">

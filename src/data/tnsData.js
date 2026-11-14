@@ -150,7 +150,7 @@ export const committeeData = {
       role: 'Vice President',
       designation: 'Vice President',
       initials: 'SJ',
-      photoUrl: '/assets/images/committee/dr-srikanth-jawalkar.jpg',
+      photoUrl: '/assets/images/committee/dr-srikanth-jawalkar.jpg?v=20261114_2',
     },
     {
       name: 'Dr. N Pratap Kumar',
@@ -171,7 +171,7 @@ export const committeeData = {
       role: 'Treasurer',
       designation: 'Treasurer',
       initials: 'CT',
-      photoUrl: '/assets/images/committee/dr-chandrakanth-tapsi.jpg?v=20261113',
+      photoUrl: '/assets/images/committee/dr-chandrakanth-tapsi.jpg?v=20261114_2',
     },
     {
       name: 'Dr. G Sathyanarayana',
@@ -183,25 +183,25 @@ export const committeeData = {
   ],
   executiveCommittee: [
     { name: 'Dr. N. Veena', role: 'Executive Member', initials: 'NV', photoUrl: null },
-    { name: 'Dr. G. Venugopal', role: 'Executive Member', initials: 'GV', photoUrl: '/assets/images/committee/dr-g-venugopal.jpg' },
+    { name: 'Dr. G. Venugopal', role: 'Executive Member', initials: 'GV', photoUrl: '/assets/images/committee/dr-g-venugopal.jpg?v=20261114_2' },
     { name: 'Dr. Sanjay Thumati', role: 'Executive Member', initials: 'ST', photoUrl: '/assets/images/committee/dr-t-sanjay.png' },
-    { name: 'Dr. P V K Kishore', role: 'Executive Member', initials: 'PK', photoUrl: '/assets/images/committee/dr-pvk-kishore.jpg' },
-    { name: 'Dr. Dasari Srinivas', role: 'Executive Member', initials: 'DS', photoUrl: '/assets/images/committee/dr-dasari-srinivas.jpg' },
-    { name: 'Dr. P Ranjith', role: 'Executive Member', initials: 'PR', photoUrl: '/assets/images/committee/dr-p-ranjith.jpg' },
-    { name: 'Dr. G Rajashekar Reddy', role: 'Executive Member', initials: 'GR', photoUrl: '/assets/images/committee/dr-g-rajashekar-reddy.jpg' },
+    { name: 'Dr. P V K Kishore', role: 'Executive Member', initials: 'PK', photoUrl: '/assets/images/committee/dr-pvk-kishore.jpg?v=20261114_2' },
+    { name: 'Dr. Dasari Srinivas', role: 'Executive Member', initials: 'DS', photoUrl: '/assets/images/committee/dr-dasari-srinivas.jpg?v=20261114_2' },
+    { name: 'Dr. P Ranjith', role: 'Executive Member', initials: 'PR', photoUrl: '/assets/images/committee/dr-p-ranjith.jpg?v=20261114_2' },
+    { name: 'Dr. G Rajashekar Reddy', role: 'Executive Member', initials: 'GR', photoUrl: '/assets/images/committee/dr-g-rajashekar-reddy.jpg?v=20261114_2' },
   ],
   advisors: [
     {
       name: 'Dr. M K Singh',
       role: 'Advisor',
       initials: 'MS',
-      photoUrl: '/assets/images/committee/dr-m-k-singh.jpg',
+      photoUrl: '/assets/images/committee/dr-m-k-singh.jpg?v=20261114_2',
     },
     {
       name: 'Dr. Alok Ranjan',
       role: 'Advisor',
       initials: 'AR',
-      photoUrl: '/assets/images/committee/dr-alok-ranjan.jpg',
+      photoUrl: '/assets/images/committee/dr-alok-ranjan.jpg?v=20261114_2',
     },
   ],
   exOfficioMembers: [
