@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, ExternalLink } from 'lucide-react';
 import BrandLogo from '../components/BrandLogo';
+import cmcLogo from '../assets/images/cmc_logo.png';
 import { societyInfo } from '../data/tnsData';
 
 export default function Footer() {
@@ -129,15 +130,43 @@ export default function Footer() {
               <span>{societyInfo.secretariat.email}</span>
             </a>
           </div>
+
+          {/* Conference Management Partner */}
+          <div className="mt-2 pt-3.5 border-t border-[#FBF8F1]/15 flex flex-col gap-2">
+            <span className="text-[11px] font-bold uppercase tracking-wider text-[#B0CB1F]">
+              Conference Manager
+            </span>
+            <div className="flex items-center gap-3">
+              <div className="w-20 py-1 px-2 bg-white rounded-lg shadow-sm flex items-center justify-center shrink-0">
+                <img src={cmcLogo} alt="CMC - Conference Management Company" className="h-7 w-auto object-contain" />
+              </div>
+              <div className="text-[12px] text-[#F7F2E8]/85 leading-snug">
+                <p className="font-semibold text-[#FBF8F1]">CMC</p>
+                <p className="text-[11px] text-[#E3DCCF]/75">Conference Management Company</p>
+                <a
+                  href="mailto:kiran@cmchyd.com"
+                  className="text-[#B0CB1F] hover:underline text-[11px] mt-0.5 inline-block"
+                >
+                  kiran@cmchyd.com
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
       {/* Bottom Copyright Strip */}
       <div className="bg-[#2D276A] border-t border-[#FBF8F1]/10 py-5 text-xs text-[#F7F2E8]/75">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-3">
           <p>
             &copy; {new Date().getFullYear()} {societyInfo.name} ({societyInfo.registrationNumber}). All Rights Reserved.
           </p>
+          <div className="flex items-center gap-2.5">
+            <span className="text-[#E3DCCF]/75 text-[11.5px]">Conference Managed by</span>
+            <div className="bg-white px-2 py-0.5 rounded shadow-sm flex items-center justify-center">
+              <img src={cmcLogo} alt="CMC - Conference Management Company" className="h-5 w-auto object-contain" />
+            </div>
+          </div>
           <p className="text-[#E3DCCF]">
             Official Website:{' '}
             <a
