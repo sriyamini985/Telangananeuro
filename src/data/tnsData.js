@@ -183,7 +183,7 @@ export const committeeData = {
   ],
   executiveCommittee: [
     { name: 'Dr. N. Veena', role: 'Executive Member', initials: 'NV', photoUrl: null },
-    { name: 'Dr. G. Venugopal', role: 'Executive Member', initials: 'GV', photoUrl: '/assets/images/committee/dr-g-venugopal.jpg?v=20261114_2' },
+    { name: 'Dr. G. Venugopal', role: 'Executive Member', initials: 'GV', photoUrl: '/assets/images/committee/dr-g-venugopal.jpg?v=20261120_1' },
     { name: 'Dr. Sanjay Thumati', role: 'Executive Member', initials: 'ST', photoUrl: '/assets/images/committee/dr-t-sanjay.png' },
     { name: 'Dr. P V K Kishore', role: 'Executive Member', initials: 'PK', photoUrl: '/assets/images/committee/dr-pvk-kishore.jpg?v=20261114_2' },
     { name: 'Dr. Dasari Srinivas', role: 'Executive Member', initials: 'DS', photoUrl: '/assets/images/committee/dr-dasari-srinivas.jpg?v=20261114_2' },
